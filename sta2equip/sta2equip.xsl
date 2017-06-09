@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:st="http://www.fdsn.org/xml/station/1"
 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+<xsl:key name="str-no-comp" match="st:Network/st:Station/st:Channel" use="substring(@code, 1, 2)" />
+
 <xsl:template match="/st:FDSNStationXML">
 
 <eposap:Baseline
@@ -20,20 +23,31 @@ xmlns:xml="http://www.w3.org/XML/1998/namespace"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
 
-<xsl:for-each select="st:Network/st:Station/st:Channel">
+<xsl:for-each select="st:Network/st:Station/st:Channel[count(. | key('str-no-comp', substring(@code, 1, 2))[1]) = 1]">
+  <xsl:variable name="current-grouping-key"
+                select="substring(@code, 1, 2)"/>
+  <xsl:variable name="current-group"
+                select="key('str-no-comp',
+                            $current-grouping-key)"/>
   <eposap:Equipment>
-    <dct:identifier><xsl:value-of select="../../@code"/>.<xsl:value-of select="../@code"/>.<xsl:value-of select="@locationCode"/>.<xsl:value-of select="@code"/></dct:identifier>
-    <eposap:serialNumber>TBD!</eposap:serialNumber>
+    <dct:identifier><xsl:value-of select="../../@code"/>.<xsl:value-of select="../@code"/>.<xsl:value-of select="@locationCode"/>.<xsl:value-of select="$current-grouping-key"/></dct:identifier>
+    <eposap:serialNumber>serialNumber TBD!</eposap:serialNumber>
     <dct:type>
       <skos:Concept>
         <skos:prefLabel>type. TBD! Why this nesting of tags?</skos:prefLabel>
         <skos:inScheme/>
       </skos:Concept>
     </dct:type>
-    <eposap:quantity>1</eposap:quantity>
-    <eposap:manufacturer><xsl:value-of select="st:DataLogger/st:Manufacturer"/></eposap:manufacturer>
+    <eposap:quantity><xsl:value-of select="count(key('str-no-comp', $current-grouping-key))"/></eposap:quantity>
+    <eposap:manufacturer>
+      <xsl:for-each select="$current-group">
+         <!-- processing for elements in group -->
+         <!-- you can use xsl:sort here also, if necessary -->
+         <xsl:value-of select="st:DataLogger/st:Manufacturer"/>
+      </xsl:for-each>
+    </eposap:manufacturer>
     <dct:description><xsl:value-of select="../st:Site/st:Name"/>, <xsl:value-of select="../st:Site/st:Country"/></dct:description>
-    <eposap:instrumentName><xsl:value-of select="../../@code"/>.<xsl:value-of select="../@code"/>.<xsl:value-of select="@locationCode"/>.<xsl:value-of select="@code"/></eposap:instrumentName>
+    <eposap:instrumentName><xsl:value-of select="../../@code"/>.<xsl:value-of select="../@code"/>.<xsl:value-of select="@locationCode"/>.<xsl:value-of select="$current-grouping-key"/></eposap:instrumentName>
     <dct:temporal>
       <dct:PeriodOfTime>
         <schema:startDate><xsl:value-of select="@startDate"/></schema:startDate>
