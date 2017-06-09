@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns="http://datacite.org/schema/kernel-3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://datacite.org/schema/kernel-3 http://schema.datacite.org/meta/kernel-3/metadata.xsd">
+  <identifier identifierType="DOI">10.14470/NJ617293</identifier>
+  <creators>
+    <creator>
+      <creatorName>Alfred Wegener Institute for Polar and Marine Research (AWI)</creatorName>
+    </creator>
+  </creators>
+  <titles>
+    <title>AW – AWI Network Antarctica</title>
+  </titles>
+  <publisher>Deutsches GeoForschungsZentrum GFZ</publisher>
+  <publicationYear>1993</publicationYear>
+  <contributors>
+    <contributor contributorType="DataCollector">
+      <contributorName>AWI</contributorName>
+    </contributor>
+    <contributor contributorType="DataManager">
+      <contributorName>GEOFON Data Centre</contributorName>
+    </contributor>
+    <contributor contributorType="Distributor">
+      <contributorName>GEOFON Data Centre</contributorName>
+    </contributor>
+    <contributor contributorType="ContactPerson">
+      <contributorName>geofon@gfz-potsdam.de</contributorName>
+    </contributor>
+    <contributor contributorType="HostingInstitution">
+      <contributorName>Deutsches GeoForschungsZentrum GFZ</contributorName>
+    </contributor>
+  </contributors>
+  <subjects>
+    <subject>Seismic monitoring</subject>
+  </subjects>
+  <dates>
+    <date dateType="Collected">1993-01-01/ </date>
+  </dates>
+  <language>en</language>
+  <resourceType resourceTypeGeneral="Other">Seismic Network</resourceType>
+  <sizes>
+    <size>Approximately 10 active stations</size>
+  </sizes>
+  <formats>
+    <format>SEED data</format>
+  </formats>
+  <descriptions>
+    <description descriptionType="Abstract">The AWI Network Antarctica is a local to regional seismological network around the German research base Neumayer Station in Dronning Maud Land, a coastal region in eastern Antarctica. The network is providing high quality data for scientific research and monitoring regional seismicity in East Antarctica, which is generally believed to be seismically inactive. However, the station coverage in Antarctica is in general sparse and small magnitude local events remain undetected by global seismic networks. The AW network increases the station coverage substantially and has the potential to reveal regional earthquakes and cryogenic events. By 2016 the network consists of 3 stations transmitting data in real-time and 4 stations, which are only accessible in the archive. Stations are equipped with three-component broadband sensors buried in snow pits or on outcropping bedrock if present. An additional small aperture array of vertical short-period sensors was installed in 1996. Between 1993 and 1999 digital data are provided as triggered event segments only, after 1999 continuous data sets are available. Stations might have larger data gaps during the austral winter, when power supply is limited. All data are freely distributed by the GEOFON data center.</description>
+  </descriptions>
+  <geoLocations>
+    <geoLocation>
+      <geoLocationBox>-71.3 -9.7 -70.7 -7.4</geoLocationBox>
+    </geoLocation>
+    <geoLocation>
+      <geoLocationPlace>Antarctica</geoLocationPlace>
+    </geoLocation>
+  </geoLocations>
+</resource>

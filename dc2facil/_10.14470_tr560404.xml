@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns="http://datacite.org/schema/kernel-3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://datacite.org/schema/kernel-3 http://schema.datacite.org/meta/kernel-3/metadata.xsd">
+  <identifier identifierType="DOI">10.14470/TR560404</identifier>
+  <creators>
+    <creator>
+      <creatorName>GEOFON Data Centre</creatorName>
+    </creator>
+  </creators>
+  <titles>
+    <title>GEOFON Seismic Network</title>
+  </titles>
+  <publisher>Deutsches GeoForschungsZentrum GFZ</publisher>
+  <publicationYear>1993</publicationYear>
+  <contributors>
+    <contributor contributorType="DataCollector">
+      <contributorName>GEOFON Data Centre</contributorName>
+    </contributor>
+    <contributor contributorType="DataManager">
+      <contributorName>GEOFON Data Centre</contributorName>
+    </contributor>
+    <contributor contributorType="Distributor">
+      <contributorName>GEOFON Data Centre</contributorName>
+    </contributor>
+    <contributor contributorType="ContactPerson">
+      <contributorName>geofon@gfz-potsdam.de</contributorName>
+    </contributor>
+    <contributor contributorType="HostingInstitution">
+      <contributorName>Deutsches GeoForschungsZentrum GFZ</contributorName>
+    </contributor>
+  </contributors>
+  <subjects>
+    <subject/>
+  </subjects>
+  <dates>
+    <date dateType="Collected">1993-09-10/</date>
+  </dates>
+  <language>en</language>
+  <resourceType resourceTypeGeneral="Other">Seismic Network</resourceType>
+  <relatedIdentifiers>
+    <!-- Hanka, W.; Kind, R.. The GEOFON Program. Annals of Geophysics v. 37, n. 5, Nov. 1994. ISSN 2037-416X -->
+    <relatedIdentifier relatedIdentifierType="DOI" relationType="IsReferencedBy">10.4401/ag-4196</relatedIdentifier>
+  </relatedIdentifiers>
+  <sizes>
+    <size>Approximately 80 active stations; greater than 440MB/day.</size>
+  </sizes>
+  <formats>
+    <format>SEED data</format>
+  </formats>
+  <descriptions>
+    <description descriptionType="Abstract">GEOFON (GEOFOrschungsNetz) is the global seismological broad-band network operated by the German GeoForschungsZentrum (GFZ). The GEOFON seismic network came into being in 1993 as one of the three pillars of the GEOFON program dedicated to Ernst von Rebeur-Paschwitz, proposer of a global earthquake monitoring system, who recorded the first teleseismic seismogram in Potsdam in 1889. The program and its seismic network were created to provide high quality broad-band data for scientific use and foster common standards in the seismological community. The network has evolved towards real-time data acquisition and distribution while keeping the high quality broad-band data in focus. Today the network plays a leading role in global real-time seismology providing valuable data for almost all fundamental and applied global/regional seismological research projects at GFZ and the wider seismological community.
+The GEOFON network is operated jointly with more than 50 international partners and in 2014 consists of about 80 active stations on all continents, but concentrated in Europe and the Mediterranean region as well as in the Indian Ocean. Station operation is mostly performed by local partners with GFZ guidance and logistic support, allowing the global network to be well-advanced technically while still extremely cost-effective.  All stations are equipped with broad-band sensors (generally STS-2) that allow resolution of the complete seismic spectrum from small high-frequency local earthquakes to the largest global earthquakes.
+Data from all stations are freely redistributed in real-time for earthquake monitoring and tsunami warning centers immediately after acquisition at the GEOFON data centre via wired or satellite links. Archived data is also available. GEOFON is part of the Modular Earth Science Infrastructure (MESI) housed at GFZ. 
+      </description>
+  </descriptions>
+  <geoLocations>
+    <geoLocation>
+      <geoLocationBox>-71.7 -156.2 78.9 147.2</geoLocationBox>
+    </geoLocation>
+    <geoLocation>
+      <geoLocationPlace>global</geoLocationPlace>
+    </geoLocation>
+  </geoLocations>
+</resource>
