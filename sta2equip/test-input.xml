@@ -1,0 +1,136 @@
+<?xml version="1.0" ?>
+<FDSNStationXML schemaVersion="1.0" xmlns="http://www.fdsn.org/xml/station/1">
+	<Source>SeisComP3</Source>
+	<Sender>GFZ</Sender>
+	<Created>2017-06-08T14:00:12</Created>
+	<Network code="Z3" endDate="2020-07-01T00:00:00" restrictedStatus="closed" startDate="2015-01-01T00:00:00">
+		<Description>AlpArray Seismic Network (AASN) temporary component</Description>
+		<Station code="A118A" endDate="2020-07-01T00:00:00" restrictedStatus="closed" startDate="2015-11-03T00:00:00">
+			<Latitude>49.35419</Latitude>
+			<Longitude>9.96992</Longitude>
+			<Elevation>453</Elevation>
+			<Site>
+				<Name>Schrozberg, Germany</Name>
+				<Country>Germany</Country>
+			</Site>
+			<CreationDate>2015-11-03T00:00:00</CreationDate>
+			<Channel code="HHZ" endDate="2020-07-01T00:00:00" locationCode="" restrictedStatus="closed" startDate="2015-11-03T00:00:00">
+				<Latitude>49.35419</Latitude>
+				<Longitude>9.96992</Longitude>
+				<Elevation>453</Elevation>
+				<Depth>0</Depth>
+				<Azimuth>0</Azimuth>
+				<Dip>-90</Dip>
+				<SampleRate>100</SampleRate>
+				<SampleRateRatio>
+					<NumberSamples>100</NumberSamples>
+					<NumberSeconds>1</NumberSeconds>
+				</SampleRateRatio>
+				<StorageFormat>Steim2</StorageFormat>
+				<ClockDrift>0</ClockDrift>
+				<Sensor resourceId="smi:ch.ethz.sed/Sensor#20160517191400.203703.40">
+					<Type>VBB</Type>
+					<Description>GFZ:Z32015:Trillium-120/g=1200</Description>
+					<Model>Trillium-120</Model>
+					<SerialNumber>2087</SerialNumber>
+				</Sensor>
+				<DataLogger resourceId="smi:ch.ethz.sed/Datalogger#20160517191400.20511.42">
+					<Type>Nanometrics</Type>
+					<Description>GFZ:Z32015:Taurus/g=419430</Description>
+					<Manufacturer>Nanometrics</Manufacturer>
+					<SerialNumber>2087</SerialNumber>
+				</DataLogger>
+				<Response>
+					<InstrumentSensitivity>
+						<Value>503316480</Value>
+						<Frequency>1</Frequency>
+						<InputUnits>
+							<Name>M/S</Name>
+						</InputUnits>
+						<OutputUnits>
+							<Name/>
+						</OutputUnits>
+					</InstrumentSensitivity>
+				</Response>
+			</Channel>
+			<Channel code="HHN" endDate="2020-07-01T00:00:00" locationCode="" restrictedStatus="closed" startDate="2015-11-03T00:00:00">
+				<Latitude>49.35419</Latitude>
+				<Longitude>9.96992</Longitude>
+				<Elevation>453</Elevation>
+				<Depth>0</Depth>
+				<Azimuth>0</Azimuth>
+				<Dip>0</Dip>
+				<SampleRate>100</SampleRate>
+				<SampleRateRatio>
+					<NumberSamples>100</NumberSamples>
+					<NumberSeconds>1</NumberSeconds>
+				</SampleRateRatio>
+				<StorageFormat>Steim2</StorageFormat>
+				<ClockDrift>0</ClockDrift>
+				<Sensor resourceId="smi:ch.ethz.sed/Sensor#20160517191400.203703.40">
+					<Type>VBB</Type>
+					<Description>GFZ:Z32015:Trillium-120/g=1200</Description>
+					<Model>Trillium-120</Model>
+					<SerialNumber>2087</SerialNumber>
+				</Sensor>
+				<DataLogger resourceId="smi:ch.ethz.sed/Datalogger#20160517191400.20511.42">
+					<Type>Nanometrics</Type>
+					<Description>GFZ:Z32015:Taurus/g=419430</Description>
+					<Manufacturer>Nanometrics</Manufacturer>
+					<SerialNumber>2087</SerialNumber>
+				</DataLogger>
+				<Response>
+					<InstrumentSensitivity>
+						<Value>503316480</Value>
+						<Frequency>1</Frequency>
+						<InputUnits>
+							<Name>M/S</Name>
+						</InputUnits>
+						<OutputUnits>
+							<Name/>
+						</OutputUnits>
+					</InstrumentSensitivity>
+				</Response>
+			</Channel>
+			<Channel code="HHE" endDate="2020-07-01T00:00:00" locationCode="" restrictedStatus="closed" startDate="2015-11-03T00:00:00">
+				<Latitude>49.35419</Latitude>
+				<Longitude>9.96992</Longitude>
+				<Elevation>453</Elevation>
+				<Depth>0</Depth>
+				<Azimuth>90</Azimuth>
+				<Dip>0</Dip>
+				<SampleRate>100</SampleRate>
+				<SampleRateRatio>
+					<NumberSamples>100</NumberSamples>
+					<NumberSeconds>1</NumberSeconds>
+				</SampleRateRatio>
+				<StorageFormat>Steim2</StorageFormat>
+				<ClockDrift>0</ClockDrift>
+				<Sensor resourceId="smi:ch.ethz.sed/Sensor#20160517191400.203703.40">
+					<Type>VBB</Type>
+					<Description>GFZ:Z32015:Trillium-120/g=1200</Description>
+					<Model>Trillium-120</Model>
+					<SerialNumber>2087</SerialNumber>
+				</Sensor>
+				<DataLogger resourceId="smi:ch.ethz.sed/Datalogger#20160517191400.20511.42">
+					<Type>Nanometrics</Type>
+					<Description>GFZ:Z32015:Taurus/g=419430</Description>
+					<Manufacturer>Nanometrics</Manufacturer>
+					<SerialNumber>2087</SerialNumber>
+				</DataLogger>
+				<Response>
+					<InstrumentSensitivity>
+						<Value>503316480</Value>
+						<Frequency>1</Frequency>
+						<InputUnits>
+							<Name>M/S</Name>
+						</InputUnits>
+						<OutputUnits>
+							<Name/>
+						</OutputUnits>
+					</InstrumentSensitivity>
+				</Response>
+			</Channel>
+		</Station>
+	</Network>
+</FDSNStationXML>
