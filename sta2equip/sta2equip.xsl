@@ -67,6 +67,7 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
     </eposap:dynamicRange>
     <eposap:resolution>Resolution TBD!</eposap:resolution>
     <eposap:samplePeriod>
+      <!-- FIXME This does not seem to match the XSD. Maybe evaluationID? -->
       <eposap:value>
         <xsl:value-of select="format-number(1 div st:SampleRate,'#.###')"/>
       </eposap:value>
