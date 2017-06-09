@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:eposap="http://www.epos-ip.org/"
+    xmlns:adms="http://www.w3.org/ns/adms#"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:spdx="http://spdx.org/rdf/terms#"
+    xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
+    xmlns:locn="http://www.w3.org/ns/locn#"
+    xmlns:schema="http://schema.org/"
+    targetNamespace="http://www.epos-ip.org/"
+    elementFormDefault="qualified"
+    attributeFormDefault="qualified">
+
+    <xs:annotation>
+        <xs:documentation xml:lang="en">
+            This is an XML Schema extension of DCAT-AP XML Schema (http://www.w3.org/ns/dcat#) for describing EPOS Baseline
+        </xs:documentation>
+    </xs:annotation>
+
+    <xs:import namespace="http://www.w3.org/ns/adms#" schemaLocation="adms.xsd"/>
+    <xs:import namespace="http://purl.org/dc/terms/" schemaLocation="dcterms.xsd"/>
+    <xs:import namespace="http://xmlns.com/foaf/0.1/" schemaLocation="foaf.xsd"/>
+    <xs:import namespace="http://www.w3.org/2002/07/owl#" schemaLocation="owl.xsd"/>
+    <xs:import namespace="http://www.w3.org/2004/02/skos/core#" schemaLocation="skos.xsd"/>
+    <xs:import namespace="http://spdx.org/rdf/terms#" schemaLocation="spdx.xsd"/>
+    <xs:import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="rdf.xsd"/>
+    <xs:import namespace="http://www.w3.org/2006/vcard/ns#" schemaLocation="vcard.xsd"/>
+    <xs:import namespace="http://www.w3.org/ns/dcat#" schemaLocation="dcat.xsd"/>
+    <xs:import namespace="http://schema.org/" schemaLocation="schema.org.xsd"/>
+
+	  <xs:complexType name="Data">
+        <xs:complexContent>
+            <xs:extension base="dcat:Dataset">
+                <xs:sequence>
+                    <!-- mandatory properties -->
+                    <xs:element name="dataID" type="xs:ID"/>
+                    <xs:element ref="dct:created" minOccurs="1" maxOccurs="1"/>
+                    <xs:element ref="dct:subject" minOccurs="1" maxOccurs="unbounded"/>
+                    <xs:element name="characterset" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="contact">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="personID" type="xs:IDREF" minOccurs="1" maxOccurs="1"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="responsibleParty">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="personID" type="xs:IDREF" minOccurs="1" maxOccurs="1"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <!-- optional properties -->
+                    <xs:element name="spatialResolution" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                    <xs:element ref="adms:representationTechnique" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="Equipment">
+        <xs:complexContent>
+            <xs:extension base="rdf:Resource">
+                <xs:sequence>
+                    <!-- mandatory properties -->
+                    <xs:element ref="dct:identifier" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="serialNumber" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                    <xs:element ref="dct:type" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="quantity" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="manufacturer" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                    <xs:element ref="dct:description" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="instrumentName" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                    <!-- optional properties -->
+                    <xs:element ref="dct:temporal" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="orientation" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="dynamicRange">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="evaluationID" type="xs:IDREF" minOccurs="0" maxOccurs="1"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="resolution" type="xs:double" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="samplePeriod">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="evaluationID" type="xs:IDREF" minOccurs="0" maxOccurs="1"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="filter" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                    <xs:element ref="dct:spatial" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="Evaluation">
+        <xs:sequence>
+            <xs:element name="evaluationID" type="xs:ID"/>
+            <xs:element name="unit" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="value" type="xs:double" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Facility">
+        <xs:complexContent>
+            <xs:extension base="rdf:Resource">
+                <xs:sequence>
+                    <!-- mandatory properties -->
+                    <xs:element ref="dct:identifier" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="facilityName" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="country" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                    <xs:element ref="dct:description" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="organisation">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="organisationID" type="xs:IDREF" minOccurs="1" maxOccurs="1"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <!-- optional properties -->
+                    <xs:element name="contact">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="personID" type="xs:IDREF" minOccurs="0" maxOccurs="1"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="facilityManager">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="personID" type="xs:IDREF" minOccurs="0" maxOccurs="1"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element ref="dct:type" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element ref="foaf:page" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="scienceDomain" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="ModalCode">
+        <xs:complexContent>
+            <xs:extension base="schema:SoftwareSourceCode">
+                <xs:sequence>
+                    <xs:element name="contact">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="personID" type="xs:IDREF" minOccurs="0" maxOccurs="1"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="Organisation">
+        <xs:complexContent>
+            <xs:extension base="vcard:Organization">
+                <xs:sequence>
+                    <!-- mandatory properties -->
+                    <xs:element name="organisationID" type="xs:ID" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="scientificContact">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="personID" type="xs:IDREF" minOccurs="1" maxOccurs="1"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <!-- optional properties -->
+                    <xs:element ref="dct:spatial" minOccurs="0" maxOccurs="1"/>
+                    <xs:element ref="dct:type" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="legalContact">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="personID" type="xs:IDREF" minOccurs="0" maxOccurs="1"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="financialContact">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="personID" type="xs:IDREF" minOccurs="0" maxOccurs="1"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="isPartOf">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="organisationID" type="xs:IDREF" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="associatedProjects">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="projectID" type="xs:IDREF" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="funding" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="fundingCurrency" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="costs" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="costsCurrency" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="Person">
+        <xs:complexContent>
+            <xs:extension base="vcard:Individual">
+                <xs:sequence>
+                    <!-- mandatory properties -->
+                    <xs:element name="personID" type="xs:ID" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="affiliation">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="organisationID" type="xs:IDREF" minOccurs="1" maxOccurs="1"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element ref="dct:language" minOccurs="1" maxOccurs="1"/>
+                    <!-- optional properties -->
+                    <xs:element name="qualification" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="cv" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+     <xs:complexType name="Project">
+        <xs:sequence>
+            <xs:element name="projectID" type="xs:ID"/>
+            <xs:element ref="dct:title" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="dct:description" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Publication">
+        <xs:complexContent>
+            <xs:extension base="foaf:Document">
+                <xs:sequence>
+                    <!-- mandatory properties -->
+                    <xs:element name="publicationID" type="xs:ID"/>
+                    <xs:element ref="dct:title" minOccurs="1" maxOccurs="unbounded"/>
+                    <xs:element name="authors">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="personID" type="xs:IDREF" minOccurs="1" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="publisher">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="personID" type="xs:IDREF" minOccurs="1" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element ref="dct:description" minOccurs="1" maxOccurs="unbounded"/>
+                    <xs:element ref="dct:issued" minOccurs="1" maxOccurs="1"/>
+                    <!-- optional properties -->
+                    <xs:element name="journal" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="issue" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="volume" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="pages" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="keyword" type="rdf:PlainLiteral" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="contributors">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="personID" type="xs:IDREF" minOccurs="1" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element ref="dct:accessRights" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element ref="dct:format" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+	<xs:complexType name="Service">
+        <xs:complexContent>
+            <xs:extension base="schema:Service">
+                <xs:sequence>
+                    <!-- mandatory properties -->
+                    <xs:element name="termsOfUse" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+                    <xs:element name="contact">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="personID" type="xs:IDREF" minOccurs="1" maxOccurs="1"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="Software">
+        <xs:complexContent>
+            <xs:extension base="schema:SoftwareApplication">
+                <xs:sequence>
+                    <xs:element name="contact">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="personID" type="xs:IDREF" minOccurs="0" maxOccurs="1"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="WebService">
+        <xs:complexContent>
+            <xs:extension base="dcat:WebService">
+                <xs:sequence>
+                    <!-- mandatory properties -->
+                    <xs:element ref="dct:identifier" minOccurs="1" maxOccurs="1"/>
+                    <xs:element ref="dct:created" minOccurs="1" maxOccurs="1"/>
+                    <xs:element ref="dct:type" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="keyword" type="rdf:PlainLiteral" minOccurs="1" maxOccurs="unbounded"/>
+                    <xs:element name="parameter" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+                    <xs:element name="contact">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="personID" type="xs:IDREF" minOccurs="1" maxOccurs="1"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="responsibleParty">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="personID" type="xs:IDREF" minOccurs="1" maxOccurs="1"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <!-- optional properties -->
+                    <xs:element ref="dct:spatial" minOccurs="0" maxOccurs="1"/>
+                    <xs:element ref="adms:representationTechnique" minOccurs="0" maxOccurs="1"/>
+                    <xs:element ref="dct:temporal" minOccurs="0" maxOccurs="1"/>
+                    <xs:element ref="dct:provenance" minOccurs="0" maxOccurs="1"/>
+                    <xs:element ref="dct:source" minOccurs="0" maxOccurs="1"/>
+
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+	<xs:element name="Baseline" type="eposap:Baseline"/>
+    <xs:complexType name="Baseline">
+		<xs:sequence>
+         	<xs:element name="Data" type="eposap:Data" minOccurs="0" maxOccurs="unbounded"/>
+         	<xs:element name="Person" type="eposap:Person" minOccurs="0" maxOccurs="unbounded"/>
+         	<xs:element name="Organisation" type="eposap:Organisation" minOccurs="0" maxOccurs="unbounded"/>
+         	<xs:element name="Project" type="eposap:Project" minOccurs="0" maxOccurs="unbounded"/>
+         	<xs:element name="Equipment" type="eposap:Equipment" minOccurs="0" maxOccurs="unbounded"/>
+         	<xs:element name="Facility" type="eposap:Facility" minOccurs="0" maxOccurs="unbounded"/>
+         	<xs:element name="Webservice" type="eposap:WebService" minOccurs="0" maxOccurs="unbounded"/>
+ 	        <xs:element name="Publication" type="eposap:Publication" minOccurs="0" maxOccurs="unbounded"/>
+    	    <xs:element name="Service" type="eposap:Service" minOccurs="0" maxOccurs="unbounded"/>
+            <!--  Software&ModalCode -->
+            <xs:element name="Software" type="eposap:Software" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="ModalCode" type="eposap:ModalCode" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Evaluation" type="eposap:Evaluation" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+</xs:schema>
