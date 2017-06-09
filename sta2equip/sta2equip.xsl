@@ -38,7 +38,7 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
     </eposap:serialNumber>
     <dct:type>
       <skos:Concept>
-        <skos:prefLabel>type. TBD! Why this nesting of tags?</skos:prefLabel>
+        <skos:prefLabel>Seismic Sensor</skos:prefLabel>
         <skos:inScheme/>
       </skos:Concept>
     </dct:type>
@@ -56,6 +56,7 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
     </eposap:instrumentName>
     <dct:temporal>
       <dct:PeriodOfTime>
+        <!-- FIXME: Should we take the minimum for start and the maximum for end? -->
         <schema:startDate><xsl:value-of select="@startDate"/></schema:startDate>
         <schema:endDate><xsl:value-of select="@endDate"/></schema:endDate>
       </dct:PeriodOfTime>
@@ -66,7 +67,10 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
     </eposap:dynamicRange>
     <eposap:resolution>Resolution TBD!</eposap:resolution>
     <eposap:samplePeriod>
-      <eposap:value>1/<xsl:value-of select="st:SampleRate"/></eposap:value>
+      <eposap:value>
+        <xsl:value-of select="format-number(1 div st:SampleRate,'#.###')"/>
+      </eposap:value>
+      <eposap:unit>s</eposap:unit>
     </eposap:samplePeriod>
     <eposap:filter>some filter TBD!</eposap:filter>
     <dct:spatial>
