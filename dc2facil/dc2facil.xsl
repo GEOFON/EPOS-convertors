@@ -27,8 +27,10 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
       <xsl:value-of select="dc:identifier"/>
     </dct:identifier>
     <eposap:facilityName>facilityName</eposap:facilityName>
-    <eposap:country>country</eposap:country>
-    <dct:description>some description</dct:description>
+    <eposap:country>N/A</eposap:country>
+    <dct:description>
+      <xsl:value-of select="dc:descriptions/dc:description"/>
+    </dct:description>
     <eposap:organisation>
       <eposap:organisationID>idvalue0</eposap:organisationID>
     </eposap:organisation>
@@ -40,16 +42,21 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
     </eposap:facilityManager>
     <dct:type>
       <skos:Concept>
-        <skos:prefLabel>type of facility</skos:prefLabel>
+        <skos:prefLabel><xsl:value-of select="dc:resourceType"/></skos:prefLabel>
         <skos:inScheme/>
       </skos:Concept>
     </dct:type>
     <foaf:page>
       <foaf:Document>
-        <foaf:primaryTopic>www.test.org</foaf:primaryTopic>
+        <foaf:primaryTopic>
+          http://dx.doi.org/<xsl:value-of select="dc:identifier"/>
+        </foaf:primaryTopic>
       </foaf:Document>
     </foaf:page>
-    <eposap:scienceDomain>some scienceDomain</eposap:scienceDomain>
+    <eposap:scienceDomain>
+      <!-- FIXME This is not working -->
+      <xsl:value-of select="dc:subjects/dc:subject"/>
+    </eposap:scienceDomain>
   </eposap:Facility>
 </xsl:for-each>
 </eposap:Baseline>
