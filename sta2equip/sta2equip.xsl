@@ -72,7 +72,7 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
       </eposap:value>
       <eposap:unit>s</eposap:unit>
     </eposap:samplePeriod>
-    <eposap:filter>some filter TBD!</eposap:filter>
+    <eposap:filter>N/A</eposap:filter>
     <dct:spatial>
       <dct:Location>
         <locn:geometry>POINT(<xsl:value-of select="st:Latitude"/>,<xsl:value-of select="st:Longitude"/>,<xsl:value-of select="st:Elevation"/>)</locn:geometry>
