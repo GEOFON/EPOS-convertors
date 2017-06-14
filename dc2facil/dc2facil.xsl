@@ -23,29 +23,29 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
 
 <xsl:for-each select="dc:resource">
   <eposap:Facility>
+    <!-- UniqueID -->
     <dct:identifier>
-      <xsl:value-of select="dc:identifier"/>
+      doi:<xsl:value-of select="dc:identifier"/>
     </dct:identifier>
-    <eposap:facilityName>facilityName</eposap:facilityName>
-    <eposap:country>N/A</eposap:country>
-    <dct:description>
-      <xsl:value-of select="dc:descriptions/dc:description"/>
-    </dct:description>
-    <eposap:organisation>
-      <eposap:organisationID>idvalue0</eposap:organisationID>
-    </eposap:organisation>
-    <eposap:contact>
-      <eposap:personID>idvalue3</eposap:personID>
-    </eposap:contact>
-    <eposap:facilityManager>
-      <eposap:personID>idvalue3</eposap:personID>
-    </eposap:facilityManager>
+    <!-- Name -->
+    <eposap:facilityName>
+      <xsl:value-of select="dc:titles/dc:title"/>
+    </eposap:facilityName>
+    <!-- Type. Unfortunately there is no common source for this.
+         already GFZ and ETH have some differences. -->
     <dct:type>
       <skos:Concept>
-        <skos:prefLabel><xsl:value-of select="dc:resourceType"/></skos:prefLabel>
+        <skos:prefLabel>Seismic Network</skos:prefLabel>
         <skos:inScheme/>
       </skos:Concept>
     </dct:type>
+    <!-- Country. This is not available at any source. -->
+    <eposap:country>N/A</eposap:country>
+    <!-- Organization. FIXME: Enumerate the possible sources for this. -->
+    <eposap:organisation>
+      <eposap:organisationID>idvalue0</eposap:organisationID>
+    </eposap:organisation>
+    <!-- Website -->
     <foaf:page>
       <foaf:Document>
         <foaf:primaryTopic>
@@ -53,10 +53,27 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
         </foaf:primaryTopic>
       </foaf:Document>
     </foaf:page>
+    <!-- Science domain. TODO: Check that this hardcoded value is OK. -->
     <eposap:scienceDomain>
-      <!-- FIXME This is not working -->
-      <xsl:value-of select="dc:subjects/dc:subject"/>
+      Seismology
     </eposap:scienceDomain>
+    <xsl:for-each select="dc:contributors/dc:contributor[@contributorType='ContactPerson']">
+      <!-- Contact. TODO: There is no contact from ETH. See others. -->
+      <eposap:contact>
+        <eposap:personID>
+          <xsl:value-of select="dc:contributorName"/>
+        </eposap:personID>
+      </eposap:contact>
+    </xsl:for-each>
+    <!-- Facility Manager. FIXME: Check that the loop works. -->
+    <eposap:facilityManager>
+      <xsl:value-of select="dc:creators/dc:creator/dc:creatorName"/>
+      <!-- <eposap:personID>idvalue3</eposap:personID> -->
+    </eposap:facilityManager>
+    <!-- Description -->
+    <dct:description>
+      <xsl:value-of select="dc:descriptions/dc:description"/>
+    </dct:description>
   </eposap:Facility>
 </xsl:for-each>
 </eposap:Baseline>
