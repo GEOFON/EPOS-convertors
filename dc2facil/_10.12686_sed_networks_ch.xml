@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns="http://datacite.org/schema/kernel-3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://datacite.org/schema/kernel-3 http://schema.datacite.org/meta/kernel-3/metadata.xsd">
+  <identifier identifierType="DOI">10.12686/sed/networks/ch</identifier>
+  <creators>
+    <creator>
+      <creatorName>Swiss Seismological Service (SED) at ETH Zurich</creatorName>
+    </creator>
+  </creators>
+  <titles>
+    <title>National Seismic Networks of Switzerland</title>
+  </titles>
+  <publisher>ETH Zürich</publisher>
+  <publicationYear>1983</publicationYear>
+  <subjects>
+    <subject>Seismic Network</subject>
+    <subject>Seismic Monitoring</subject>
+  </subjects>
+  <dates>
+    <date dateType="Available">1983</date>
+  </dates>
+  <language>english</language>
+  <resourceType resourceTypeGeneral="Other"/>
+  <formats>
+    <format>SEED data</format>
+  </formats>
+  <descriptions>
+    <description descriptionType="Other">National Seismic Networks of Switzerland, comprising all permanent high gain (short period and broadband) and low gain strong motion stations.</description>
+  </descriptions>
+</resource>
