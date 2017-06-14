@@ -32,7 +32,7 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
   <eposap:Equipment>
     <!-- UniqueID -->
     <dct:identifier>
-      <xsl:value-of select="../../@code"/>.<xsl:value-of select="../@code"/>.<xsl:value-of select="@locationCode"/>.<xsl:value-of select="$current-grouping-key"/>
+      <xsl:value-of select="../../@code"/>.<xsl:value-of select="../@code"/>.<xsl:value-of select="@locationCode"/>.<xsl:value-of select="$current-grouping-key"/>-<xsl:value-of select="@startDate"/>
     </dct:identifier>
     <!-- SerialNumber -->
     <eposap:serialNumber>
@@ -41,7 +41,82 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
     <!-- Type -->
     <dct:type>
       <skos:Concept>
-        <skos:prefLabel>Seismic Sensor</skos:prefLabel>
+        <skos:prefLabel>
+          <xsl:choose>
+            <xsl:when test="substring(@code, 2, 1)='H'">
+              High Gain Seismometer
+            </xsl:when>
+            <xsl:when test="substring(@code, 2, 1)='L'">
+              Low Gain Seismometer
+            </xsl:when>
+            <xsl:when test="substring(@code, 2, 1)='G'">
+              Gravimeter
+            </xsl:when>
+            <xsl:when test="substring(@code, 2, 1)='M'">
+              Mass Position Seismometer
+            </xsl:when>
+            <xsl:when test="substring(@code, 2, 1)='N'">
+              Accelerometer
+            </xsl:when>
+            <xsl:when test="substring(@code, 2, 1)='A'">
+              Tiltmeter
+            </xsl:when>
+            <xsl:when test="substring(@code, 2, 1)='B'">
+              Creep meter
+            </xsl:when>
+            <xsl:when test="substring(@code, 2, 1)='C'">
+              Calibration Unit
+            </xsl:when>
+            <xsl:when test="substring(@code, 2, 1)='D'">
+              Barometer
+            </xsl:when>
+            <xsl:when test="substring(@code, 2, 1)='E'">
+              Electronic Test Point
+            </xsl:when>
+            <xsl:when test="substring(@code, 2, 1)='F'">
+              Magnetometer
+            </xsl:when>
+            <xsl:when test="substring(@code, 2, 1)='I'">
+              Humidity measurement
+            </xsl:when>
+            <xsl:when test="substring(@code, 2, 1)='J'">
+              Rotational Sensor
+            </xsl:when>
+            <xsl:when test="substring(@code, 2, 1)='K'">
+              Temperature measurement
+            </xsl:when>
+            <xsl:when test="substring(@code, 2, 1)='O'">
+              Water current measurement
+            </xsl:when>
+            <xsl:when test="substring(@code, 2, 1)='Q'">
+              Electric Potential
+            </xsl:when>
+            <xsl:when test="substring(@code, 2, 1)='R'">
+              Rainfall measurement
+            </xsl:when>
+            <xsl:when test="substring(@code, 2, 1)='S'">
+              Linear Strain
+            </xsl:when>
+            <xsl:when test="substring(@code, 2, 1)='T'">
+              Tide instrument (Depth of water)
+            </xsl:when>
+            <xsl:when test="substring(@code, 2, 1)='U'">
+              Bolometer
+            </xsl:when>
+            <xsl:when test="substring(@code, 2, 1)='W'">
+              Wind measurement
+            </xsl:when>
+            <xsl:when test="substring(@code, 2, 1)='X'">
+              Derived or generated channel
+            </xsl:when>
+            <xsl:when test="substring(@code, 2, 1)='Y'">
+              Non-specific instrument
+            </xsl:when>
+            <xsl:when test="substring(@code, 2, 1)='Z'">
+              Synthesized Beams
+            </xsl:when>
+          </xsl:choose>
+        </skos:prefLabel>
         <skos:inScheme/>
       </skos:Concept>
     </dct:type>
