@@ -38,7 +38,8 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
     <eposap:serialNumber>
       Sensor: <xsl:value-of select="st:Sensor/st:SerialNumber"/>. DataLogger: <xsl:value-of select="st:DataLogger/st:SerialNumber"/>.
     </eposap:serialNumber>
-    <!-- Type -->
+    <!-- Type. Using the 2nd letter from channel to get a description from the
+    Seed Manual -->
     <dct:type>
       <skos:Concept>
         <skos:prefLabel>
@@ -120,15 +121,19 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
         <skos:inScheme/>
       </skos:Concept>
     </dct:type>
-    <!-- Quantity -->
+    <!-- Quantity.
+    Count how many components can be found. -->
     <eposap:quantity>
       <xsl:value-of select="count(key('str-no-comp', $current-grouping-key))"/>
     </eposap:quantity>
-    <!-- Manufacturer -->
+    <!-- Manufacturer.
+    Take the one from the Datalogger based on GFZ.
+    TODO: Check in other data centres. -->
     <eposap:manufacturer>
       <xsl:value-of select="st:DataLogger/st:Manufacturer"/>
     </eposap:manufacturer>
-    <!-- Description -->
+    <!-- Description.
+    TODO: Merge what is in 'type' and the description of the Site. -->
     <dct:description>
       <xsl:value-of select="../st:Site/st:Name"/>, <xsl:value-of select="../st:Site/st:Country"/>
     </dct:description>
@@ -136,20 +141,23 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
     <!-- ValidTo -->
     <dct:temporal>
       <dct:PeriodOfTime>
-        <!-- Should we take the minimum for start and the maximum for end? -->
         <schema:startDate><xsl:value-of select="@startDate"/></schema:startDate>
         <schema:endDate><xsl:value-of select="@endDate"/></schema:endDate>
       </dct:PeriodOfTime>
     </dct:temporal>
-    <!-- InstrumentName -->
+    <!-- InstrumentName
+    Use the NET.STA.LOC.CHA code. -->
     <eposap:instrumentName>
       <xsl:value-of select="../../@code"/>.<xsl:value-of select="../@code"/>.<xsl:value-of select="@locationCode"/>.<xsl:value-of select="$current-grouping-key"/>
     </eposap:instrumentName>
-    <!-- Orientation -->
+    <!-- Orientation
+    TODO: Take Azimuth and Dip for each channel. -->
     <eposap:orientation>Orientation TBD!</eposap:orientation>
     <!-- dynamicRange -->
     <eposap:dynamicRange>
-      <eposap:evaluationID>N/A</eposap:evaluationID>
+      <eposap:evaluationID>
+        N/A
+      </eposap:evaluationID>
     </eposap:dynamicRange>
     <!-- Resolution -->
     <eposap:resolution>
@@ -173,7 +181,8 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
     <eposap:filter>
       N/A
     </eposap:filter>
-    <!-- Location -->
+    <!-- Location
+    Use a POINT with longitude, latitude and elevation as parameters. -->
     <dct:spatial>
       <dct:Location>
         <locn:geometry>POINT(<xsl:value-of select="st:Longitude"/>,<xsl:value-of select="st:Latitude"/>,<xsl:value-of select="st:Elevation"/>)</locn:geometry>
