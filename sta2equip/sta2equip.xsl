@@ -30,53 +30,78 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
                 select="key('str-no-comp',
                             $current-grouping-key)"/>
   <eposap:Equipment>
+    <!-- UniqueID -->
     <dct:identifier>
       <xsl:value-of select="../../@code"/>.<xsl:value-of select="../@code"/>.<xsl:value-of select="@locationCode"/>.<xsl:value-of select="$current-grouping-key"/>
     </dct:identifier>
+    <!-- SerialNumber -->
     <eposap:serialNumber>
       Sensor: <xsl:value-of select="st:Sensor/st:SerialNumber"/>. DataLogger: <xsl:value-of select="st:DataLogger/st:SerialNumber"/>.
     </eposap:serialNumber>
+    <!-- Type -->
     <dct:type>
       <skos:Concept>
         <skos:prefLabel>Seismic Sensor</skos:prefLabel>
         <skos:inScheme/>
       </skos:Concept>
     </dct:type>
+    <!-- Quantity -->
     <eposap:quantity>
       <xsl:value-of select="count(key('str-no-comp', $current-grouping-key))"/>
     </eposap:quantity>
+    <!-- Manufacturer -->
     <eposap:manufacturer>
       <xsl:value-of select="st:DataLogger/st:Manufacturer"/>
     </eposap:manufacturer>
+    <!-- Description -->
     <dct:description>
       <xsl:value-of select="../st:Site/st:Name"/>, <xsl:value-of select="../st:Site/st:Country"/>
     </dct:description>
-    <eposap:instrumentName>
-      <xsl:value-of select="../../@code"/>.<xsl:value-of select="../@code"/>.<xsl:value-of select="@locationCode"/>.<xsl:value-of select="$current-grouping-key"/>
-    </eposap:instrumentName>
+    <!-- ValidFrom -->
+    <!-- ValidTo -->
     <dct:temporal>
       <dct:PeriodOfTime>
-        <!-- FIXME: Should we take the minimum for start and the maximum for end? -->
+        <!-- Should we take the minimum for start and the maximum for end? -->
         <schema:startDate><xsl:value-of select="@startDate"/></schema:startDate>
         <schema:endDate><xsl:value-of select="@endDate"/></schema:endDate>
       </dct:PeriodOfTime>
     </dct:temporal>
+    <!-- InstrumentName -->
+    <eposap:instrumentName>
+      <xsl:value-of select="../../@code"/>.<xsl:value-of select="../@code"/>.<xsl:value-of select="@locationCode"/>.<xsl:value-of select="$current-grouping-key"/>
+    </eposap:instrumentName>
+    <!-- Orientation -->
     <eposap:orientation>Orientation TBD!</eposap:orientation>
+    <!-- dynamicRange -->
     <eposap:dynamicRange>
-      <eposap:evaluationID>Dynamic Range TBD!</eposap:evaluationID>
+      <eposap:evaluationID>N/A</eposap:evaluationID>
     </eposap:dynamicRange>
-    <eposap:resolution>Resolution TBD!</eposap:resolution>
+    <!-- Resolution -->
+    <eposap:resolution>
+      N/A
+    </eposap:resolution>
+    <!-- samplePeriod -->
     <eposap:samplePeriod>
       <!-- FIXME This does not seem to match the XSD. Maybe evaluationID? -->
-      <eposap:value>
-        <xsl:value-of select="format-number(1 div st:SampleRate,'#.###')"/>
-      </eposap:value>
-      <eposap:unit>s</eposap:unit>
+      <eposap:Evaluation>
+        <!-- samplePeriod/value -->
+        <eposap:value>
+          <xsl:value-of select="format-number(1 div st:SampleRate,'#.###')"/>
+        </eposap:value>
+        <!-- samplePeriod/unit -->
+        <eposap:unit>
+          s
+        </eposap:unit>
+      </eposap:Evaluation>
     </eposap:samplePeriod>
-    <eposap:filter>N/A</eposap:filter>
+    <!-- filter -->
+    <eposap:filter>
+      N/A
+    </eposap:filter>
+    <!-- Location -->
     <dct:spatial>
       <dct:Location>
-        <locn:geometry>POINT(<xsl:value-of select="st:Latitude"/>,<xsl:value-of select="st:Longitude"/>,<xsl:value-of select="st:Elevation"/>)</locn:geometry>
+        <locn:geometry>POINT(<xsl:value-of select="st:Longitude"/>,<xsl:value-of select="st:Latitude"/>,<xsl:value-of select="st:Elevation"/>)</locn:geometry>
       </dct:Location>
     </dct:spatial>
   </eposap:Equipment>
