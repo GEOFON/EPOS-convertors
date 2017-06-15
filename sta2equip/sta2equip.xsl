@@ -58,12 +58,12 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
     Take the one from the Datalogger based on GFZ.
     TODO: Check in other data centres. -->
     <eposap:manufacturer>
-      <xsl:value-of select="st:DataLogger/st:Manufacturer"/>
+      Sensor: <xsl:value-of select="st:Sensor/st:Manufacturer"/>. DataLogger: <xsl:value-of select="st:DataLogger/st:Manufacturer"/>.
     </eposap:manufacturer>
     <!-- Description.
     TODO: Merge what is in 'type' and the description of the Site. -->
     <dct:description>
-      <xsl:apply-templates select="@code"/> in 
+      <xsl:apply-templates select="@code"/> in
       <xsl:value-of select="../st:Site/st:Name"/>, <xsl:value-of select="../st:Site/st:Country"/>
     </dct:description>
     <!-- ValidFrom -->
