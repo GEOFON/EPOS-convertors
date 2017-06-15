@@ -35,7 +35,16 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
          already GFZ and ETH have some differences. -->
     <dct:type>
       <skos:Concept>
-        <skos:prefLabel>Seismic Network</skos:prefLabel>
+        <skos:prefLabel>
+          <xsl:if test="dc:resourceType/@resourceTypeGeneral='Other'">
+            <xsl:if test="string-length(dc:resourceType)>0">
+              <xsl:value-of select="dc:resourceType"/>
+            </xsl:if>
+            <xsl:if test="string-length(dc:resourceType)=0">
+              Seismic Network
+            </xsl:if>
+          </xsl:if>
+        </skos:prefLabel>
         <skos:inScheme/>
       </skos:Concept>
     </dct:type>
