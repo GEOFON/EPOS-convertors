@@ -13,4 +13,5 @@
 * Creators/Creator -> Facility manager (Given Name, Last Name, ID) **Suggestion: Change cardinality to N instead of 1**
 * Descriptions/Description -> description
 
-Relationships with other entities still not included.
+P.S.1: Relationships with other entities still not included.
+P.S.2: Discuss what type of IDs can we use to uniquely identify Persons, Organizations and so on.
