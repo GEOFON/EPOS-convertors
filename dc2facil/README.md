@@ -14,4 +14,5 @@
 * Descriptions/Description -> description
 
 P.S.1: Relationships with other entities still not included.
+
 P.S.2: Discuss what type of IDs can we use to uniquely identify Persons, Organizations and so on.
