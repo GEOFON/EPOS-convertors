@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns="http://datacite.org/schema/kernel-3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://datacite.org/schema/kernel-3 http://schema.datacite.org/meta/kernel-3/metadata.xsd">
+  <identifier identifierType="DOI">10.15778/RESIF.FR</identifier>
+  <creators>
+    <creator>
+      <creatorName>RESIF</creatorName>
+    </creator>
+  </creators>
+  <titles>
+    <title>RESIF-RLBP French Broad-band network, RESIF-RAP strong motion network and other seismic stations in metropolitan France</title>
+  </titles>
+  <publisher>RESIF - Réseau Sismologique et géodésique Français</publisher>
+  <publicationYear>1995</publicationYear>
+  <contributors>
+    <contributor contributorType="DataManager">
+      <contributorName>RESIF Information System</contributorName>
+    </contributor>
+    <contributor contributorType="Distributor">
+      <contributorName>RESIF Data Centre</contributorName>
+    </contributor>
+    <contributor contributorType="HostingInstitution">
+      <contributorName>Université de Grenoble Alpes</contributorName>
+    </contributor>
+    <contributor contributorType="DataCurator">
+      <contributorName>Ecole et Observatoire des Sciences de la Terre - EOST</contributorName>
+    </contributor>
+    <contributor contributorType="DataCurator">
+      <contributorName>Observatoire de la Côte d’Azur - OCA</contributorName>
+    </contributor>
+    <contributor contributorType="ContactPerson">
+      <contributorName>FR_AT_resif.fr</contributorName>
+    </contributor>
+    <contributor contributorType="DataCurator">
+      <contributorName>Observatoire des Sciences de l'Univers de Grenoble - OSUG</contributorName>
+    </contributor>
+    <contributor contributorType="DataCollector">
+      <contributorName>Ecole et Observatoire des Sciences de la Terre - EOST</contributorName>
+    </contributor>
+    <contributor contributorType="DataCollector">
+      <contributorName>Institut de Physique du Globe de Paris - IPGP</contributorName>
+    </contributor>
+    <contributor contributorType="DataCollector">
+      <contributorName>Observatoire de la Côte d’Azur - OCA</contributorName>
+    </contributor>
+    <contributor contributorType="DataCollector">
+      <contributorName>Observatoire Midi-Pyrénées - OMP</contributorName>
+    </contributor>
+    <contributor contributorType="DataCollector">
+      <contributorName>Observatoire de Physique du Globe de Clermont-Ferrand - OPGC</contributorName>
+    </contributor>
+    <contributor contributorType="DataCollector">
+      <contributorName>Observatoire de Recherche Méditerranéen de l’Environnement - OREME</contributorName>
+    </contributor>
+    <contributor contributorType="DataCollector">
+      <contributorName>Observatoire des Sciences de l'Univers de Grenoble - OSUG</contributorName>
+    </contributor>
+    <contributor contributorType="DataCollector">
+      <contributorName>Observatoire des Sciences de l'Univers Nantes Atlantique - OSUNA</contributorName>
+    </contributor>
+    <contributor contributorType="Sponsor">
+      <contributorName>Centre national de la Recherche Scientifique (CNRS)</contributorName>
+    </contributor>
+    <contributor contributorType="Sponsor">
+      <contributorName>Institut de Sciences de l'Univers (INSU)</contributorName>
+    </contributor>
+    <contributor contributorType="Sponsor">
+      <contributorName>Commissariat à l'Energie Atomique et aux énergies alternatives (CEA)</contributorName>
+    </contributor>
+    <contributor contributorType="Sponsor">
+      <contributorName>Institut de Physique du Globe de Paris (IPGP)</contributorName>
+    </contributor>
+    <contributor contributorType="Sponsor">
+      <contributorName>Observatoire de la Côte d’Azur (OCA)</contributorName>
+    </contributor>
+    <contributor contributorType="Sponsor">
+      <contributorName>Université Grenoble Alpes (UGA)</contributorName>
+    </contributor>
+    <contributor contributorType="Sponsor">
+      <contributorName>Université de Strasbourg (UNISTRA)</contributorName>
+    </contributor>
+    <contributor contributorType="Sponsor">
+      <contributorName>Université Paul Sabatier, Toulouse (UPS)</contributorName>
+    </contributor>
+    <contributor contributorType="Sponsor">
+      <contributorName>Université de Nantes (UNA)</contributorName>
+    </contributor>
+    <contributor contributorType="Sponsor">
+      <contributorName>Université de Montpellier (UM2)</contributorName>
+    </contributor>
+    <contributor contributorType="Sponsor">
+      <contributorName>Université Balise Pascal, Clermont Ferrand (UBP)</contributorName>
+    </contributor>
+  </contributors>
+  <subjects>
+    <subject>Broad Band</subject>
+    <subject>Short Period</subject>
+    <subject>Strong motion</subject>
+    <subject>France</subject>
+    <subject/>
+  </subjects>
+  <dates>
+    <date dateType="Collected">1995-01-01/</date>
+  </dates>
+  <language>en</language>
+  <resourceType resourceTypeGeneral="Other">Seismic Network</resourceType>
+  <relatedIdentifiers>
+    <relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">http://www.resif.fr</relatedIdentifier>
+  </relatedIdentifiers>
+  <sizes>
+    <size>Approximately 100 active stations; greater than 2 GB/day.</size>
+  </sizes>
+  <formats>
+    <format>SEED data</format>
+  </formats>
+  <descriptions>
+    <description descriptionType="Abstract">The FR network code embraces most of the permanent seismic stations installed in metropolitan France and operated by academic research institutes and observatories. In 2014, it includes 1) about fifty broadband stations of the RLBP (Réseau Large Bande Permanent) network, 2) about fourty short period stations of the historical RéNaSS (Réseau National de Surveillance Sismique) network, 3) six broadband stations installaed at the LSBB -low noise underground multidisciplinary laboratory-, 4) some broadband stations on landslides managed by OMIV (Observatoire Multidiciplinaire des Instabilités de Versants) and 5) the ANTARES seafloor broadband station in the Ligurian sea. Some of these broadband stations also host a strong motion sensor of the RAP French strong motion network. Broadband stations of the RLBP are part of the national RESIF (Réseau Sismologique et géodésique Français) Research Infrastructure. Within this framework, this network is planned to evolve toward a denser and more homogeneous network of ~150 broadband stations by 2018. Each broadband station is equipped with a wide band seismic sensor, usually having a flat response at periods lower than 120s, and a high dynamic acquisition system. Data are collected in near real-time via DSL, satellite or cellar links. Emphasis is put on the continuity of the records and the noise level at the sites to provide high-quality data to the end users. The RESIF Information System manages the data from the broadband stations and collocated accelerometers and freely provides both real time and consolidated data. Quality control of waveforms and metadata updating are performed by EOST (Strasbourg) and OCA (Nice) for the RLBP, RéNaSS, LSSB and ANTARES stations and by OSUG (Grenoble) for the OMIV and RAP stations. Archiving and distribution of every data are carried out by the RESIF datacentre hosted by the University of Grenoble Alpes. Data from short period stations are expected to integrate the system in 2015. All together, these data are used for a wide variety of fundamental and applied studies including seismic imaging of the deep earth, monitoring of the seismic activity in metropolitan France and adjacent regions, source studies of local, regional and teleseismic earthquakes or monitoring of seismic signals related to subsurface processes.</description>
+  </descriptions>
+  <geoLocations>
+    <geoLocation>
+      <geoLocationPlace>France</geoLocationPlace>
+    </geoLocation>
+    <geoLocation>
+      <geoLocationBox>41.3 -4.8 51.1 9.6</geoLocationBox>
+    </geoLocation>
+  </geoLocations>
+</resource>
