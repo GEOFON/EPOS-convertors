@@ -2,7 +2,7 @@
 
 * DOI -> UniqueID
 * titles/title -> Name
-* "Seismic Network" -> type
+* "Seismic Network" -> type **Nice to have: permanent or temporary; but it's not available**
 * N/A -> Country (NRI) **Suggestion: Change cardinality to N instead of 1**
 * Contributors/DataCollector -> Organization (Name, Role, ID)
 * Contributors/DataManager -> Organization (Name, Role, ID)
