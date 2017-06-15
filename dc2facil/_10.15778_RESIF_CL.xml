@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns="http://datacite.org/schema/kernel-3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://datacite.org/schema/kernel-3 http://schema.datacite.org/meta/kernel-3/metadata.xsd">
+  <identifier identifierType="DOI">10.15778/RESIF.CL</identifier>
+  <creators>
+    <creator>
+      <creatorName>Corinth Rift Laboratory team and RESIF Datacenter</creatorName>
+    </creator>
+  </creators>
+  <titles>
+    <title>CL - Corinth Rift Laboratory Seismological Network (CRLNET)</title>
+  </titles>
+  <publisher>RESIF - Réseau Sismologique et géodésique Français</publisher>
+  <publicationYear>2013</publicationYear>
+  <contributors>
+    <contributor contributorType="DataManager">
+      <contributorName>RESIF Information System</contributorName>
+    </contributor>
+    <contributor contributorType="Distributor">
+      <contributorName>RESIF Data Centre</contributorName>
+    </contributor>
+    <contributor contributorType="ContactPerson">
+      <contributorName>CL_AT_resif.fr</contributorName>
+    </contributor>
+    <contributor contributorType="HostingInstitution">
+      <contributorName>Université de Grenoble Alpes</contributorName>
+    </contributor>
+    <contributor contributorType="DataCollector">
+      <contributorName>Ecole Normale Supérieure Paris - ENS</contributorName>
+    </contributor>
+    <contributor contributorType="DataCollector">
+      <contributorName>Institut de Physique du Globe Paris - IPGP
+       </contributorName>
+    </contributor>
+    <contributor contributorType="DataCollector">
+      <contributorName>National Observatory of Athens – NOA
+       </contributorName>
+    </contributor>
+    <contributor contributorType="DataCollector">
+      <contributorName>Observatoire de la Côte d'Azur - OCA</contributorName>
+    </contributor>
+    <contributor contributorType="Sponsor">
+      <contributorName>Centre national de la Recherche Scientifique (CNRS)
+</contributorName>
+    </contributor>
+    <contributor contributorType="Sponsor">
+      <contributorName>Institut de Sciences de l'Univers (INSU)</contributorName>
+    </contributor>
+    <contributor contributorType="Sponsor">
+      <contributorName>Ecole Normale Supérieure Paris - ENS
+</contributorName>
+    </contributor>
+    <contributor contributorType="Sponsor">
+      <contributorName>Institut de Physique du Globe de Paris (IPGP)</contributorName>
+    </contributor>
+    <contributor contributorType="Sponsor">
+      <contributorName>Ecole et Observatoire des Sciences de la Terre Strabourg (EOST)</contributorName>
+    </contributor>
+  </contributors>
+  <subjects>
+    <subject>dense observation network</subject>
+    <subject>seismology</subject>
+    <subject>broad band</subject>
+    <subject>short period</subject>
+    <subject>strong motion</subject>
+    <subject>GNSS</subject>
+    <subject>borehole instrumentation</subject>
+  </subjects>
+  <dates>
+    <date dateType="Collected">2000-05-16/</date>
+  </dates>
+  <language>en</language>
+  <resourceType resourceTypeGeneral="Other">Seismic Network</resourceType>
+  <relatedIdentifiers>
+    <!--Lyon-Caen H., Papadimitriou P., Deschamps A., Bernard P., Makropoulos K., Pacchiani F., Patau G. 2004 First results of the CRLN seismic network in the western Corinth rift: evidence for old fault reactivation. C. R. Geosc. 336, 343-352. DOI: 10.1016/j.crte.2003.12.004-->
+    <relatedIdentifier relatedIdentifierType="DOI" relationType="IsReferencedBy">10.1016/j.crte.2003.12.004</relatedIdentifier>
+    <!--Bernard P., Lyon-Caen H., Briole P., Deschamps A., Boudin F., Makropoulos K., Papadimitriou P., Lemeille F., Patau G., Billiris H., Paradissis D., Papazissi K., Castar&#232;de H., Charade O., Nercessian A., Avallone A., Pacchiani F., Zahradnik J., Sacks S., Linde A. 2006 Seismicity, deformation and seismic hazard in the western rift of Corinth: New insights from the Corinth Rift Laboratory (CRL). Tectonophysics 426, 7-30. DOI: 10.1016/j.tecto.2006.02.012-->
+    <relatedIdentifier relatedIdentifierType="DOI" relationType="IsReferencedBy">10.1016/j.tecto.2006.02.012</relatedIdentifier>
+  </relatedIdentifiers>
+  <sizes>
+    <size>Approximately 46 active stations; greater than 1.5 GB/day.</size>
+  </sizes>
+  <formats>
+    <format>SEED data</format>
+    <format>RINEX for GNSS data</format>
+  </formats>
+  <descriptions>
+    <description descriptionType="Abstract">
+    The Corinth Rift Laboratory Seismological Network - CL includes 46 stations combining seismic broad band and short period sensors, accelerometers, GNSS, strainmeters, and tiltmeters. The network has been installed since 2000 in the western part of the rift around the city of Aigion, and covers a 40 km × 40 km area. It is operated jointly with French, Greek and Czech academic research institutes. Most of the data are collected in near real-time to the acquisition center in Athens (NKUA). The data will progressively integrate the RESIF Information System: the data of several stations are already available, and those of all the stations will be integrated in a second stage. The RESIF Information System provides both real time and consolidated data. Archiving and distribution are carried out by the RESIF node at ISTerre (Grenoble, France). In a context of fast continental rift with continuous, high level of strain rate and seismic activity, all these data may be used to investigate fundamental issues of multi-scale earthquake and fault mechanics. They will provide clues for better understanding and modelling the rift opening, the role of fluids in the swarm activity, the spatio-temporal processes which couple seismic and aseismic activity on a complex, segmented fault system.
+  </description>
+  </descriptions>
+  <geoLocations>
+    <geoLocation>
+      <geoLocationPlace>Greece</geoLocationPlace>
+    </geoLocation>
+    <geoLocation>
+      <geoLocationBox>38.1 21.35 38.6 21.8</geoLocationBox>
+    </geoLocation>
+  </geoLocations>
+</resource>
