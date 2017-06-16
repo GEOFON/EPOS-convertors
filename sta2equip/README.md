@@ -4,7 +4,7 @@
 * Sensor/SerialNumber + Datalogger/SerialNumber -> SerialNumber
 * [Description from Seed Manual about 2nd letter from channel] -> type
 * Number of components -> quantity
-* DataLogger/Manufacturer -> manufacturer
+* Sensor/Manufacturer + DataLogger/Manufacturer -> manufacturer
 * Same as 'type' + Site/Name + Site/Country -> description
 * @startdate + @enddate -> TimePeriod
 * NET.STA.LOC.CH[2 letters] -> InstrumentName
