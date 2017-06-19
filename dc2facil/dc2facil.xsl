@@ -51,9 +51,16 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
     <!-- Country. This is not available at any source. -->
     <eposap:country>N/A</eposap:country>
     <!-- Organization. FIXME: Enumerate the possible sources for this. -->
-    <eposap:organisation>
-      <eposap:organisationID>idvalue0</eposap:organisationID>
-    </eposap:organisation>
+    <xsl:for-each select="dc:contributors/dc:contributor">
+      <eposap:organisation>
+        <vcard:fn>
+          <xsl:value-of select="dc:contributorName"/>
+        </vcard:fn>
+        <eposap:organisationID>
+          <xsl:value-of select="@contributorType"/>
+        </eposap:organisationID>
+      </eposap:organisation>
+    </xsl:for-each>
     <!-- Website -->
     <foaf:page>
       <foaf:Document>
