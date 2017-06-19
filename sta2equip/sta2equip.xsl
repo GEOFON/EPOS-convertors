@@ -35,9 +35,9 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
       <xsl:value-of select="../../@code"/>.<xsl:value-of select="../@code"/>.<xsl:value-of select="@locationCode"/>.<xsl:value-of select="$current-grouping-key"/>-<xsl:value-of select="@startDate"/>
     </dct:identifier>
     <!-- SerialNumber -->
-    <eposap:serialNumber>
+    <schema:serialNumber>
       Sensor: <xsl:value-of select="st:Sensor/st:SerialNumber"/>. DataLogger: <xsl:value-of select="st:DataLogger/st:SerialNumber"/>.
-    </eposap:serialNumber>
+    </schema:serialNumber>
     <!-- Type. Using the 2nd letter from channel to get a description from the
     Seed Manual -->
     <dct:type>
@@ -51,17 +51,16 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
     </dct:type>
     <!-- Quantity.
     Count how many components can be found. -->
-    <eposap:quantity>
+    <schema:numberOfItems>
       <xsl:value-of select="count(key('str-no-comp', $current-grouping-key))"/>
-    </eposap:quantity>
+    </schema:numberOfItems>
     <!-- Manufacturer.
-    Take the one from the Datalogger based on GFZ.
-    TODO: Check in other data centres. -->
-    <eposap:manufacturer>
+    Take the one from the Datalogger based on GFZ. -->
+    <schema:manufacturer>
       Sensor: <xsl:value-of select="st:Sensor/st:Manufacturer"/>. DataLogger: <xsl:value-of select="st:DataLogger/st:Manufacturer"/>.
-    </eposap:manufacturer>
+    </schema:manufacturer>
     <!-- Description.
-    TODO: Merge what is in 'type' and the description of the Site. -->
+    Merge what is in 'type' and the description of the Site. -->
     <dct:description>
       <xsl:apply-templates select="@code"/> in
       <xsl:value-of select="../st:Site/st:Name"/>, <xsl:value-of select="../st:Site/st:Country"/>
@@ -76,45 +75,43 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
     </dct:temporal>
     <!-- InstrumentName
     Use the NET.STA.LOC.CHA code. -->
-    <eposap:instrumentName>
+    <dct:title>
       <xsl:value-of select="../../@code"/>.<xsl:value-of select="../@code"/>.<xsl:value-of select="@locationCode"/>.<xsl:value-of select="$current-grouping-key"/>
-    </eposap:instrumentName>
+    </dct:title>
     <!-- Orientation
     TODO: Take Azimuth and Dip for each channel. -->
-    <eposap:orientation>Orientation TBD!</eposap:orientation>
+    <eposap:orientation>
+      Orientation TBD!
+    </eposap:orientation>
     <!-- dynamicRange -->
-    <eposap:dynamicRange>
-      <eposap:evaluationID>
-        N/A
-      </eposap:evaluationID>
     </eposap:dynamicRange>
     <!-- Resolution -->
     <eposap:resolution>
-      N/A
+      Resolution N/A
     </eposap:resolution>
     <!-- samplePeriod -->
     <eposap:samplePeriod>
       <!-- FIXME This does not seem to match the XSD. Maybe evaluationID? -->
       <eposap:Evaluation>
         <!-- samplePeriod/value -->
-        <eposap:value>
+        <schema:value>
           <xsl:value-of select="format-number(1 div st:SampleRate,'#.###')"/>
-        </eposap:value>
+        </schema:value>
         <!-- samplePeriod/unit -->
-        <eposap:unit>
+        <schema:unitText>
           s
-        </eposap:unit>
+        </schema:unitText>
       </eposap:Evaluation>
     </eposap:samplePeriod>
     <!-- filter -->
     <eposap:filter>
-      N/A
+      Filter N/A
     </eposap:filter>
     <!-- Location
     Use a POINT with longitude, latitude and elevation as parameters. -->
     <dct:spatial>
       <dct:Location>
-        <locn:geometry>POINT(<xsl:value-of select="st:Longitude"/>,<xsl:value-of select="st:Latitude"/>,<xsl:value-of select="st:Elevation"/>)</locn:geometry>
+        <locn:geometry>POINT(<xsl:value-of select="st:Longitude"/> <xsl:value-of select="st:Latitude"/> <xsl:value-of select="st:Elevation"/>)</locn:geometry>
       </dct:Location>
     </dct:spatial>
   </eposap:Equipment>
