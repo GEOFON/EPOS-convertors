@@ -84,7 +84,7 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
       Orientation TBD!
     </eposap:orientation>
     <!-- dynamicRange -->
-    </eposap:dynamicRange>
+    <eposap:dynamicRange/>
     <!-- Resolution -->
     <eposap:resolution>
       Resolution N/A
