@@ -36,7 +36,12 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
     </dct:identifier>
     <!-- SerialNumber -->
     <schema:serialNumber>
-      Sensor: <xsl:value-of select="st:Sensor/st:SerialNumber"/>. DataLogger: <xsl:value-of select="st:DataLogger/st:SerialNumber"/>.
+      <xsl:if test="string-length(st:Sensor/st:SerialNumber)>0">
+        Sensor: <xsl:value-of select="st:Sensor/st:SerialNumber"/>.
+      </xsl:if>
+      <xsl:if test="string-length(st:DataLogger/st:SerialNumber)>0">
+        DataLogger: <xsl:value-of select="st:DataLogger/st:SerialNumber"/>.
+      </xsl:if>
     </schema:serialNumber>
     <!-- Type. Using the 2nd letter from channel to get a description from the
     Seed Manual -->
@@ -54,10 +59,14 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
     <schema:numberOfItems>
       <xsl:value-of select="count(key('str-no-comp', $current-grouping-key))"/>
     </schema:numberOfItems>
-    <!-- Manufacturer.
-    Take the one from the Datalogger based on GFZ. -->
+    <!-- Manufacturer -->
     <schema:manufacturer>
-      Sensor: <xsl:value-of select="st:Sensor/st:Manufacturer"/>. DataLogger: <xsl:value-of select="st:DataLogger/st:Manufacturer"/>.
+      <xsl:if test="string-length(st:Sensor/st:Manufacturer)>0">
+        Sensor: <xsl:value-of select="st:Sensor/st:Manufacturer"/>.
+      </xsl:if>
+      <xsl:if test="string-length(st:DataLogger/st:Manufacturer)>0">
+        DataLogger: <xsl:value-of select="st:DataLogger/st:Manufacturer"/>.
+      </xsl:if>
     </schema:manufacturer>
     <!-- Description.
     Merge what is in 'type' and the description of the Site. -->
