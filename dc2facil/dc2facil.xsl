@@ -55,16 +55,15 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
       </vcard:Address>
     </vcard:hasAddress>
     <!-- Organization. FIXME: Enumerate the possible sources for this. -->
-    <xsl:for-each select="dc:contributors/dc:contributor">
+    <xsl:for-each select="dc:contributors/dc:contributor[@contributorType='DataCollector']">
       <eposap:owner>
-        <eposap:organisation>
-          <vcard:fn>
-            <xsl:value-of select="dc:contributorName"/>
-          </vcard:fn>
+        <eposap:Organisation>
           <eposap:organisationID>
-            <xsl:value-of select="@contributorType"/>
+            <xsl:value-of select="dc:contributorName"/>
+            <!-- FIXME: Missing "Role"! What to do with other contributor types?
+            <xsl:value-of select="@contributorType"/> -->
           </eposap:organisationID>
-        </eposap:organisation>
+        </eposap:Organisation>
       </eposap:owner>
     </xsl:for-each>
     <!-- Website -->
@@ -83,6 +82,7 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
       <!-- Contact. TODO: There is no contact from ETH. See others. -->
       <dcat:contactPoint>
         <eposap:Person>
+          <!-- FIXME: We actually need personID -->
           <xsl:value-of select="dc:contributorName"/>
         </eposap:Person>
       </dcat:contactPoint>
@@ -90,6 +90,7 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
     <!-- Facility Manager. FIXME: Check that the loop works. -->
     <eposap:facilityManager>
       <eposap:Person>
+        <!-- FIXME: We actually need personID -->
         <xsl:value-of select="dc:creators/dc:creator/dc:creatorName"/>
         <!-- <eposap:personID>idvalue3</eposap:personID> -->
       </eposap:Person>
