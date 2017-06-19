@@ -49,17 +49,23 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
       </skos:Concept>
     </dct:type>
     <!-- Country. This is not available at any source. -->
-    <eposap:country>N/A</eposap:country>
+    <vcard:hasAddress>
+      <vcard:Address>
+        N/A
+      </vcard:Address>
+    </vcard:hasAddress>
     <!-- Organization. FIXME: Enumerate the possible sources for this. -->
     <xsl:for-each select="dc:contributors/dc:contributor">
-      <eposap:organisation>
-        <vcard:fn>
-          <xsl:value-of select="dc:contributorName"/>
-        </vcard:fn>
-        <eposap:organisationID>
-          <xsl:value-of select="@contributorType"/>
-        </eposap:organisationID>
-      </eposap:organisation>
+      <eposap:owner>
+        <eposap:organisation>
+          <vcard:fn>
+            <xsl:value-of select="dc:contributorName"/>
+          </vcard:fn>
+          <eposap:organisationID>
+            <xsl:value-of select="@contributorType"/>
+          </eposap:organisationID>
+        </eposap:organisation>
+      </eposap:owner>
     </xsl:for-each>
     <!-- Website -->
     <foaf:page>
@@ -70,21 +76,23 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
       </foaf:Document>
     </foaf:page>
     <!-- Science domain. TODO: Check that this hardcoded value is OK. -->
-    <eposap:scienceDomain>
+    <dcat:theme>
       Seismology
-    </eposap:scienceDomain>
+    </dcat:theme>
     <xsl:for-each select="dc:contributors/dc:contributor[@contributorType='ContactPerson']">
       <!-- Contact. TODO: There is no contact from ETH. See others. -->
-      <eposap:contact>
-        <eposap:personID>
+      <dcat:contactPoint>
+        <eposap:Person>
           <xsl:value-of select="dc:contributorName"/>
-        </eposap:personID>
-      </eposap:contact>
+        </eposap:Person>
+      </dcat:contactPoint>
     </xsl:for-each>
     <!-- Facility Manager. FIXME: Check that the loop works. -->
     <eposap:facilityManager>
-      <xsl:value-of select="dc:creators/dc:creator/dc:creatorName"/>
-      <!-- <eposap:personID>idvalue3</eposap:personID> -->
+      <eposap:Person>
+        <xsl:value-of select="dc:creators/dc:creator/dc:creatorName"/>
+        <!-- <eposap:personID>idvalue3</eposap:personID> -->
+      </eposap:Person>
     </eposap:facilityManager>
     <!-- Description -->
     <dct:description>
