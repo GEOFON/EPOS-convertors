@@ -90,7 +90,7 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
     <!-- Orientation
     TODO: Take Azimuth and Dip for each channel. -->
     <eposap:orientation>
-      Orientation TBD!
+      Orientation: to be done! Azimuth and Dip?
     </eposap:orientation>
     <!-- dynamicRange -->
     <eposap:dynamicRange/>
