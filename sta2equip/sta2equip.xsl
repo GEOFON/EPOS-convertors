@@ -96,7 +96,7 @@ xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
     <eposap:dynamicRange/>
     <!-- Resolution -->
     <eposap:resolution>
-      Resolution N/A
+      Resolution: N/A
     </eposap:resolution>
     <!-- samplePeriod -->
     <eposap:samplePeriod>
